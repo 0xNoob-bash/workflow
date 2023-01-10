@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: browser-actions/setup-chrome@latest
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -34,8 +34,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: setup chrome
-      - run: |
-          chrome --version
-          git clone https:${{ secrets.GIT_TKN }}@//github.com/0xNoob-bash/bot &&cd bot
-          python3 -m pip install -r requirements.txt
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
