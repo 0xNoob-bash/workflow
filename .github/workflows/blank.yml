@@ -35,4 +35,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+      - run: chrome --version &&git clone https:${{ secrets.GIT_TKN }}@//github.com/0xNoob-bash/bot &&cd bot &&python3 -m pip install -r requirements.txt
+
